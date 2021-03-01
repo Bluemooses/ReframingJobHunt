@@ -1,7 +1,5 @@
 /* the only line you likely need to change is
-
  database: 'prime_app',
-
  change `prime_app` to the name of your database, and you should be all set!
 */
 
@@ -28,13 +26,11 @@ if (process.env.DATABASE_URL) {
   };
 } else {
   config = {
-    host: process.env.AWS_HOST, // Server hosting the postgres database
-    user: process.env.AWS_USERNAME,
-    password: process.env.AWS_PASSWORD,
-    port: process.env.AWS_PORT, // env var: PGPORT
-    database: process.env.AWS_DATABASE, // CHANGE THIS LINE! env var: PGDATABASE, this is likely the one thing you need to change to get up and running
+    host: "localhost", // Server hosting the postgres database
+    port: 5432, // env var: PGPORT
+    database: "prime_app", // CHANGE THIS LINE! env var: PGDATABASE, this is likely the one thing you need to change to get up and running
     max: 10, // max number of clients in the pool
-    idleTimeoutMillis: 300000, // how long a client is allowed to remain idle before being closed
+    idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
   };
 }
 
