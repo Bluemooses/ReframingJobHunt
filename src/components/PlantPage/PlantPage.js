@@ -8,14 +8,19 @@ const PlantPage = () => {
     const fetchPlants = async () => {
       const response = await axios.get("/api/plants");
       setPlantData(response.data.data);
-      console.log(response.data.data);
     };
     fetchPlants();
   }, []);
 
   return (
     <div>
-      <h1>Plant Page Placeholder</h1>
+      <h1>
+        Interact with{" "}
+        <a href="https://trefle.io" target="_blank">
+          trefle.io
+        </a>
+        , a global plant database.
+      </h1>
       {plantData &&
         plantData.map((plant) => {
           return <PlantCard key={plant.id} plant={plant} />;
