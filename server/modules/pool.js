@@ -28,9 +28,9 @@ if (process.env.DATABASE_URL) {
   };
 } else {
   config = {
+    host: process.env.AWS_HOST, // Server hosting the postgres database
     user: process.env.AWS_USERNAME,
     password: process.env.AWS_PASSWORD,
-    host: process.env.AWS_HOST, // Server hosting the postgres database
     port: process.env.AWS_PORT, // env var: PGPORT
     database: process.env.AWS_DATABASE, // CHANGE THIS LINE! env var: PGDATABASE, this is likely the one thing you need to change to get up and running
     max: 10, // max number of clients in the pool
