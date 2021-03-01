@@ -7,11 +7,9 @@ const PlantPage = () => {
     const fetchPlants = async () => {
       const response = await axios.get("/api/plants");
       setPlantData(response.data.data);
-      console.log(response);
+      console.log(response.data.data);
     };
     fetchPlants();
-    console.log(plantData);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -21,7 +19,7 @@ const PlantPage = () => {
         plantData.map((plant) => {
           return (
             <div id={plant.id}>
-              <p>{plant.common_name}</p>
+              <p id={plant.id}>{plant.common_name}</p>
             </div>
           );
         })}
