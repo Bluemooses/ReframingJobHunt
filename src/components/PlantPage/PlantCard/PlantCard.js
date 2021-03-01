@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Image } from "@chakra-ui/react";
 
 const PlantCard = ({ plant }) => {
   console.log(plant);
@@ -6,7 +7,7 @@ const PlantCard = ({ plant }) => {
   return (
     <div>
       <p>{plant.common_name}</p>
-      <img src={plant.image_url} alt="Unavailable" />
+      <Image src={plant.image_url} alt="Unavailable" />
       <p>Family: {plant.family}</p>
       <p>Genus: {plant.genus}</p>
     </div>

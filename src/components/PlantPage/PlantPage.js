@@ -22,7 +22,7 @@ const PlantPage = () => {
         </a>
         , a global plant database.
       </h1>
-      <PlantSearch />
+      <PlantSearch setPlantData={setPlantData} />
       {plantData &&
         plantData.map((plant) => {
           return <PlantCard key={plant.id} plant={plant} />;
