@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import PlantCard from "./PlantCard/PlantCard";
 const PlantPage = () => {
   const [plantData, setPlantData] = useState();
 
@@ -17,11 +18,7 @@ const PlantPage = () => {
       <h1>Plant Page Placeholder</h1>
       {plantData &&
         plantData.map((plant) => {
-          return (
-            <div id={plant.id}>
-              <p id={plant.id}>{plant.common_name}</p>
-            </div>
-          );
+          return <PlantCard key={plant.id} plant={plant} />;
         })}
     </div>
   );
