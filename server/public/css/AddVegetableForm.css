@@ -2,6 +2,31 @@
   padding: 0.5%;
 }
 
+.AddVegetableFormWrapper .css-4302v8 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  background-color: #c4ebc4;
+  width: 50%;
+}
+
+.AddVegetableFormWrapper .css-4302v8::-webkit-input-placeholder {
+  color: darkgray;
+}
+
+.AddVegetableFormWrapper .css-4302v8:-ms-input-placeholder {
+  color: darkgray;
+}
+
+.AddVegetableFormWrapper .css-4302v8::-ms-input-placeholder {
+  color: darkgray;
+}
+
+.AddVegetableFormWrapper .css-4302v8::placeholder {
+  color: darkgray;
+}
+
 .AddVegetableFormWrapper .css-pnwwfp {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;

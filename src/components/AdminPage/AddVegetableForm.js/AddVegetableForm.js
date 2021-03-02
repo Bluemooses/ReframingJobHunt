@@ -1,6 +1,12 @@
 import React from "react";
 //Style imports
-import { Stack, Input, Button } from "@chakra-ui/react";
+import {
+  Stack,
+  Input,
+  Button,
+  InputLeftAddon,
+  InputGroup,
+} from "@chakra-ui/react";
 import "./AddVegetableForm.scss";
 
 const AddVegetableForm = () => {
@@ -33,11 +39,14 @@ const AddVegetableForm = () => {
           placeholder="Seed spacing in square inches"
           type="number"
         />
-        <Input
-          focusBorderColor="green.600"
-          placeholder="Date to plant"
-          type="date"
-        />
+        <InputGroup>
+          <InputLeftAddon>Date to Plant</InputLeftAddon>
+          <Input
+            focusBorderColor="green.600"
+            placeholder="Date to plant"
+            type="date"
+          />
+        </InputGroup>
         <Input
           focusBorderColor="green.600"
           placeholder="Days until harvest"
