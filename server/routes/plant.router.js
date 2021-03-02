@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
     .get(url)
     .then((response) => {
       res.send(response.data);
+      console.log(response);
     })
     .catch((error) => {
       res.sendStatus(500);
