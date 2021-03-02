@@ -5,18 +5,15 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
-
 import { connect } from "react-redux";
+import "./App.scss";
 
+// Components
 import Nav from "../Nav/Nav";
-
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
 import InfoPage from "../InfoPage/InfoPage";
-
-import "./App.css";
 import PlantPage from "../PlantPage/PlantPage";
 
 class App extends Component {
