@@ -1,8 +1,17 @@
 .AddVegetableFormWrapper {
   padding: 0.5%;
+
+  // Chakra UI Heading
+  .css-zey6tx {
+    text-align: center;
+    padding: 1%;
+    padding-right: 15%;
+    margin: 1%;
+  }
   // Chakra UI Input Group
   .css-4302v8 {
     align-self: center;
+    align-content: center;
     text-align: center;
     background-color: rgb(196, 235, 196);
     width: 50%;

@@ -6,6 +6,7 @@ import {
   Button,
   InputLeftAddon,
   InputGroup,
+  Heading,
 } from "@chakra-ui/react";
 import "./AddVegetableForm.scss";
 
@@ -26,6 +27,7 @@ const AddVegetableForm = () => {
 
   return (
     <div className="AddVegetableFormWrapper">
+      <Heading>Add a vegetable to the cloud...</Heading>
       {/* This Stack gives us some nice spacing between our input fields */}
       <Stack spacing={2}>
         <Input focusBorderColor="green.600" placeholder="Name" type="text" />

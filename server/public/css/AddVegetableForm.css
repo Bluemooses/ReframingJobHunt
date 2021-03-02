@@ -2,10 +2,19 @@
   padding: 0.5%;
 }
 
+.AddVegetableFormWrapper .css-zey6tx {
+  text-align: center;
+  padding: 1%;
+  padding-right: 15%;
+  margin: 1%;
+}
+
 .AddVegetableFormWrapper .css-4302v8 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   text-align: center;
   background-color: #c4ebc4;
   width: 50%;
