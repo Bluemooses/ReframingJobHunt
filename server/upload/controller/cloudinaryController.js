@@ -15,6 +15,9 @@ const generateCloudinarySignature = (req, res) => {
   res.send(signature);
 };
 
+// Implement this later
+
+
 module.exports = {
   generateCloudinarySignature,
 };
