@@ -8,3 +8,17 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
+
+
+-- NEED TABLE FOR VEGETABLES
+CREATE TABLE "vegetables" (
+    "id" SERIAL PRIMARY KEY,
+    "name" VARCHAR (150),
+    "description" VARCHAR (300),
+    "seed_spacing_area_sq_in" INT,
+    "date_to_plant" DATE,
+    "days_to_harvest" INT,
+    "yield_per_sq_ft" INT,
+    "url" varchar(1000)
+)
+-- NEED TABLE FOR GARDEN BEDS
