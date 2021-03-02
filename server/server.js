@@ -11,6 +11,7 @@ const passport = require("./strategies/user.strategy");
 const userRouter = require("./routes/user.router");
 const plantRouter = require("./routes/plant.router");
 const vegetableRouter = require("./routes/vegetable.router");
+const cloudinaryRouter = require("./upload/controller/cloudinaryController");
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -27,6 +28,7 @@ app.use(passport.session());
 app.use("/api/user", userRouter);
 app.use("/api/plants", plantRouter);
 app.use("/api/vegetables", vegetableRouter);
+app.use("/api/cloudinary", cloudinaryRouter.generateCloudinarySignature);
 
 // Serve static files
 app.use(express.static("build"));

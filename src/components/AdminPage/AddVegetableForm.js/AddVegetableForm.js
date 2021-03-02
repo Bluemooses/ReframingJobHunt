@@ -21,7 +21,68 @@ const AddVegetableForm = () => {
     date_to_plant: "",
     days_to_harvest: "",
     yield_per_sq_ft: "",
+    url: "",
+    uploadSuccess: false,
   });
+
+  const generateCloudinarySignature = (callback, params_to_sign) => {
+    axios
+      .post("/api/cloudinary", { data: params_to_sign })
+      .then((signature) => {
+        callback(signature.data);
+      })
+      .catch((xhr, status, error) => {
+        console.log(
+          "xhr --> %s  status --> %s  error --> %s ",
+          xhr,
+          status,
+          error
+        );
+      });
+  };
+  //instantiate our widget prior to DOM load for faster perceived modal open.
+  const cloudinaryWidget = window.cloudinary.createUploadWidget(
+    {
+      cloudName: "notema",
+      uploadPreset: "signed_preset_default",
+      uploadSignature: generateCloudinarySignature,
+      uploadSignatureTimestamp: Date.now(),
+      authenticated: true,
+      apiKey: "596391692614194",
+      sources: ["local"],
+      multiple: false,
+      defaultSource: "local",
+      singleUploadAutoClose: false,
+      showUploadMoreButton: false,
+    },
+    (error, response) => {
+      if (error) {
+        console.log(error);
+      } else {
+        cloudinaryCallback(response);
+      }
+    }
+  );
+  /**
+   * callback handler for Cloudinary Widget API
+   * https://cloudinary.com/documentation/upload_widget
+   */
+  const cloudinaryCallback = (response) => {
+    console.log(response);
+    if (response && response.event === "success") {
+      plantToAdd.url = response.info.secure_url;
+      plantToAdd.uploadSuccess = true;
+    } else {
+      return;
+    }
+  };
+
+  const handleCloudinaryButton = () => {
+    console.log("widget?", cloudinaryWidget);
+    if (!cloudinaryWidget.isShowing()) {
+      cloudinaryWidget.open();
+    }
+  };
 
   //Handles the call to our API to create a new vegetable entry in db
   const addVegetable = () => {
@@ -75,6 +136,8 @@ const AddVegetableForm = () => {
           placeholder="Yield in lbs. per square ft."
           type="number"
         />
+        <Button onClick={handleCloudinaryButton}>Image Upload</Button>
+
         <Button type="submit" onClick={addVegetable}>
           Add Plant
         </Button>
