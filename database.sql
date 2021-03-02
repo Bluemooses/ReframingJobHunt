@@ -19,6 +19,7 @@ CREATE TABLE "vegetables" (
     "date_to_plant" DATE,
     "days_to_harvest" INT,
     "yield_per_sq_ft" INT,
-    "url" varchar(1000)
+    "url" varchar(1000),
+    "search_count" INT
 )
 -- NEED TABLE FOR GARDEN BEDS
