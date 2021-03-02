@@ -30,7 +30,6 @@ const AddVegetableForm = () => {
       <Stack spacing={2}>
         <Input focusBorderColor="green.600" placeholder="Name" type="text" />
         <Input
-          textAlign="center"
           focusBorderColor="green.600"
           placeholder="Description"
           type="text"
