@@ -1,4 +1,25 @@
 .AddVegetableFormWrapper .css-pnwwfp {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   text-align: center;
+  background-color: #c4ebc4;
+  width: 50%;
+}
+
+.AddVegetableFormWrapper .css-pnwwfp::-webkit-input-placeholder {
+  color: darkgray;
+}
+
+.AddVegetableFormWrapper .css-pnwwfp:-ms-input-placeholder {
+  color: darkgray;
+}
+
+.AddVegetableFormWrapper .css-pnwwfp::-ms-input-placeholder {
+  color: darkgray;
+}
+
+.AddVegetableFormWrapper .css-pnwwfp::placeholder {
+  color: darkgray;
 }
 /*# sourceMappingURL=AddVegetableForm.css.map */

@@ -1,5 +1,11 @@
 .AddVegetableFormWrapper {
   .css-pnwwfp {
+    align-self: center;
     text-align: center;
+    background-color: rgb(196, 235, 196);
+    width: 50%;
+    &::placeholder {
+      color: darkgray;
+    }
   }
 }
