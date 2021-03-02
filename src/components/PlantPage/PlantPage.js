@@ -17,7 +17,7 @@ const PlantPage = () => {
     <div>
       <h1>
         Interact with{" "}
-        <a href="https://trefle.io" target="_blank">
+        <a href="https://trefle.io" target="_blank" rel="noopener noreferrer">
           trefle.io
         </a>
         , a global plant database.

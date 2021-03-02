@@ -1,4 +1,6 @@
 .AddVegetableFormWrapper {
+  padding: 0.5%;
+
   .css-pnwwfp {
     align-self: center;
     text-align: center;
@@ -7,5 +9,10 @@
     &::placeholder {
       color: darkgray;
     }
+  }
+
+  .css-myeq6i {
+    align-self: center;
+    width: 50%;
   }
 }

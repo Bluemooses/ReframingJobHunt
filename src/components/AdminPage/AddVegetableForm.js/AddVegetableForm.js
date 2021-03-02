@@ -1,13 +1,6 @@
 import React from "react";
 //Style imports
-import {
-  Stack,
-  Input,
-  Button,
-  Label,
-  Flex,
-  FormControl,
-} from "@chakra-ui/react";
+import { Stack, Input, Button } from "@chakra-ui/react";
 import "./AddVegetableForm.scss";
 
 const AddVegetableForm = () => {
@@ -27,6 +20,7 @@ const AddVegetableForm = () => {
 
   return (
     <div className="AddVegetableFormWrapper">
+      {/* This Stack gives us some nice spacing between our input fields */}
       <Stack spacing={2}>
         <Input focusBorderColor="green.600" placeholder="Name" type="text" />
         <Input
@@ -51,7 +45,7 @@ const AddVegetableForm = () => {
         />
         <Input
           focusBorderColor="green.600"
-          placeholder="Yield per square ft."
+          placeholder="Yield in lbs. per square ft."
           type="number"
         />
         <Button type="submit" onClick={AddPlant()}>
