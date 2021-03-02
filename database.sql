@@ -20,6 +20,6 @@ CREATE TABLE "vegetables" (
     "days_to_harvest" INT,
     "yield_per_sq_ft" INT,
     "url" varchar(1000),
-    "search_count" INT
+    "search_count" INT DEFAULT 0
 )
 -- NEED TABLE FOR GARDEN BEDS

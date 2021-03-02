@@ -1,5 +1,8 @@
+import React from "react";
+import AddVegetableForm from "./AddVegetableForm.js/AddVegetableForm";
+
 const AdminPage = () => {
-  <div></div>;
+  <AddVegetableForm />;
 };
-e;
+
 export default AdminPage;
