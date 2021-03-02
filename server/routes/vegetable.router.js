@@ -13,6 +13,8 @@ router.get("/", (req, res) => {});
 /**
  * POST Vegetable - This data comes from AdminPage/AddVegetableForm
  */
-router.post("/", rejectUnauthenticated, (req, res) => {});
+router.post("/", rejectUnauthenticated, (req, res) => {
+  console.log(req.body);
+});
 
 module.exports = router;
