@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// Dependencies
+import axios from "axios";
 //Style imports
 import {
   Stack,
@@ -22,8 +24,9 @@ const AddVegetableForm = () => {
   });
 
   //Handles the call to our API to create a new vegetable entry in db
-  const AddPlant = () => {
+  const addVegetable = () => {
     console.log(plantToAdd);
+    axios.post("/api/vegetables", plantToAdd);
   };
 
   return (
@@ -72,7 +75,7 @@ const AddVegetableForm = () => {
           placeholder="Yield in lbs. per square ft."
           type="number"
         />
-        <Button type="submit" onClick={AddPlant}>
+        <Button type="submit" onClick={addVegetable}>
           Add Plant
         </Button>
       </Stack>
