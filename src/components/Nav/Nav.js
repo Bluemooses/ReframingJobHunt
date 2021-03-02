@@ -16,6 +16,9 @@ const Nav = (props) => (
       {/* Show the link to the info page and the logout button if the user is logged in */}
       {props.user.id && (
         <>
+          <Link className="nav-link" to="/admin">
+            Admin
+          </Link>
           <Link className="nav-link" to="/info">
             Info Page
           </Link>
@@ -29,9 +32,6 @@ const Nav = (props) => (
       {/* <Link className="nav-link" to="/plants">
         Plants
       </Link> */}
-      <Link className="nav-link" to="/admin">
-        Admin
-      </Link>
     </div>
   </div>
 );

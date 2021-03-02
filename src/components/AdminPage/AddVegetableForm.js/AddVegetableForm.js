@@ -22,11 +22,7 @@ const AddVegetableForm = () => {
       <Input placeholder="Date to plant" type="date" />
       <Input placeholder="Days until harvest" type="number" />
       <Input placeholder="Yield per square ft." type="number" />
-      <Button
-        onClick={() => {
-          AddPlant;
-        }}
-      ></Button>
+      <Button onClick={AddPlant()}></Button>
     </Stack>
   );
 };
