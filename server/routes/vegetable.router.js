@@ -1,6 +1,9 @@
 const express = require("express");
 const pool = require("../modules/pool");
 const router = express.Router();
+const {
+  rejectUnauthenticated,
+} = require("../modules/authentication-middleware");
 
 /**
  * GET route template
@@ -8,8 +11,8 @@ const router = express.Router();
 router.get("/", (req, res) => {});
 
 /**
- * POST route template
+ * POST Vegetable - This data comes from AdminPage/AddVegetableForm
  */
-router.post("/", (req, res) => {});
+router.post("/", rejectUnauthenticated, (req, res) => {});
 
 module.exports = router;
