@@ -127,7 +127,6 @@ const AddVegetableForm = (props) => {
       {/* This Stack gives us some nice spacing between our input fields */}
       <Stack spacing={2}>
         <Input
-          ref={(el) => (plantToAdd.name = el)}
           onChange={(e) => (plantToAdd.name = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Name"
