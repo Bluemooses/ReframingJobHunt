@@ -22,8 +22,8 @@ const AddVegetableForm = () => {
     days_to_harvest: "",
     yield_per_sq_ft: "",
     url: "",
-    uploadSuccess: false,
   });
+  const [uploadSuccess, setUploadSuccess] = useState({ uploadSuccess: false });
 
   const generateCloudinarySignature = (callback, params_to_sign) => {
     axios
@@ -71,7 +71,7 @@ const AddVegetableForm = () => {
     console.log(response);
     if (response && response.event === "success") {
       plantToAdd.url = response.info.secure_url;
-      plantToAdd.uploadSuccess = true;
+      uploadSuccess = true;
     } else {
       return;
     }
