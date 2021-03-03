@@ -112,7 +112,7 @@ const AddVegetableForm = () => {
             (plantToAdd.seed_spacing_area_sq_in = e.target.value)
           }
           focusBorderColor="green.600"
-          placeholder="Seed spacing in square inches"
+          placeholder="Seed spacing in sq. in."
           type="number"
         />
         <InputGroup>
@@ -133,7 +133,7 @@ const AddVegetableForm = () => {
         <Input
           onChange={(e) => (plantToAdd.yield_per_sq_ft = e.target.value)}
           focusBorderColor="green.600"
-          placeholder="Yield in lbs. per square ft."
+          placeholder="Yield in lbs. per sq. ft."
           type="number"
         />
         <Button onClick={handleCloudinaryButton}>Image Upload</Button>
