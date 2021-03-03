@@ -15,11 +15,11 @@ CREATE TABLE "vegetables" (
     "id" SERIAL PRIMARY KEY,
     "name" VARCHAR (150),
     "description" VARCHAR (300),
-    "seed_spacing_area_sq_in" INT,
+    "seed_spacing_area_sq_in" DECIMAL,
     "date_to_plant" DATE,
-    "days_to_harvest" INT,
-    "yield_per_sq_ft" INT,
+    "days_to_harvest" DECIMAL,
+    "yield_per_sq_ft" DECIMAL,
     "url" varchar(1000),
     "search_count" INT DEFAULT 0
-)
+);
 -- NEED TABLE FOR GARDEN BEDS

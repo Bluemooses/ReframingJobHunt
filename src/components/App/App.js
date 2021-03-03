@@ -18,12 +18,11 @@ import InfoPage from "../InfoPage/InfoPage";
 import PlantPage from "../PlantPage/PlantPage";
 import AdminPage from "../AdminPage/AdminPage";
 import axios from "axios";
+import VegetablePage from "../VegetablePage/VegetablePage";
 
 const App = () => {
   // Dispatch hook
   const dispatch = useDispatch();
-
-  const [vegetableData, setVegetableData] = useState([]);
 
   useEffect(() => {
     dispatch({ type: "FETCH_USER" });
@@ -32,8 +31,7 @@ const App = () => {
 
   const fetchVegetables = async () => {
     const response = await axios.get("/api/vegetables");
-    setVegetableData(response.data);
-    console.log(response.data);
+    dispatch({ type: "SET_VEGETABLES", payload: response.data });
   };
 
   return (
@@ -46,7 +44,7 @@ const App = () => {
           {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
           <Route exact path="/about" component={AboutPage} />
-          <Route exact path="/plants" component={PlantPage} />
+          <Route exact path="/vegetables" component={VegetablePage} />
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
