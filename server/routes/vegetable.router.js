@@ -8,7 +8,18 @@ const {
 /**
  * GET route template
  */
-router.get("/", (req, res) => {});
+router.get("/", (req, res) => {
+  getVegetablesQuery = `SELECT * FROM "vegetables" ORDER BY "name" ASC`;
+  pool
+    .query(getVegetablesQuery)
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.log("Error in vegetable get", error);
+      res.sendStatus(500);
+    });
+});
 
 /**
  * POST Vegetable - This data comes from AdminPage/AddVegetableForm
