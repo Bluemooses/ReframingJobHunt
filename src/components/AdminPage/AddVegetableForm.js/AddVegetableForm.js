@@ -87,16 +87,26 @@ const AddVegetableForm = (props) => {
     }
   };
 
+  // This function finds all of our input values and sets them to 0
+  const handleReset = () => {
+    Array.from(document.querySelectorAll("input")).forEach(
+      (input) => (input.value = "")
+    );
+  };
+
   //Handles the call to our API to create a new vegetable entry in db
   const addVegetable = (event) => {
     event.preventDefault();
     axios
       .post("/api/vegetables", plantToAdd)
       .then((response) => {
-        console.log(response);
+        if (String(response).includes("success")) {
+          setPostError(false);
+          handleReset();
+          console.log("success");
+        }
       })
       .catch((error) => {
-        console.log(error);
         if (String(error).includes("500")) {
           setPostError(true);
           console.log("Post error");
@@ -117,21 +127,19 @@ const AddVegetableForm = (props) => {
       {/* This Stack gives us some nice spacing between our input fields */}
       <Stack spacing={2}>
         <Input
-          value={plantToAdd.name}
+          ref={(el) => (plantToAdd.name = el)}
           onChange={(e) => (plantToAdd.name = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Name"
           type="text"
         />
         <Input
-          value={plantToAdd.description}
           onChange={(e) => (plantToAdd.description = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Description"
           type="text"
         />
         <Input
-          value={plantToAdd.seed_spacing_area_sq_in}
           onChange={(e) =>
             (plantToAdd.seed_spacing_area_sq_in = e.target.value)
           }
@@ -142,7 +150,6 @@ const AddVegetableForm = (props) => {
         <InputGroup>
           <InputLeftAddon>Date to Plant</InputLeftAddon>
           <Input
-            value={plantToAdd.date_to_plant}
             onChange={(e) => (plantToAdd.date_to_plant = e.target.value)}
             focusBorderColor="green.600"
             placeholder="Date to plant"
@@ -150,14 +157,12 @@ const AddVegetableForm = (props) => {
           />
         </InputGroup>
         <Input
-          value={plantToAdd.days_to_harvest}
           onChange={(e) => (plantToAdd.days_to_harvest = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Days until harvest"
           type="number"
         />
         <Input
-          value={plantToAdd.yield_per_sq_ft}
           onChange={(e) => (plantToAdd.yield_per_sq_ft = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Yield in lbs. per sq. ft."
