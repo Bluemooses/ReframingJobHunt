@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // Dependencies
 import axios from "axios";
+import { useDispatch } from "react-redux";
 //Style imports
 import {
   Stack,
@@ -12,7 +13,8 @@ import {
 } from "@chakra-ui/react";
 import "./AddVegetableForm.scss";
 
-const AddVegetableForm = () => {
+const AddVegetableForm = (props) => {
+  const dispatch = useDispatch();
   // This object matches a database entry in the vegetable table [search_count, id, and url] omitted
   const [plantToAdd, setPlantToAdd] = useState({
     name: "",
@@ -24,6 +26,7 @@ const AddVegetableForm = () => {
     url: "",
   });
   const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [isPostError, setPostError] = useState(false);
 
   const generateCloudinarySignature = (callback, params_to_sign) => {
     axios
@@ -85,29 +88,50 @@ const AddVegetableForm = () => {
   };
 
   //Handles the call to our API to create a new vegetable entry in db
-  const addVegetable = () => {
-    console.log(plantToAdd);
-    axios.post("/api/vegetables", plantToAdd);
-  };
+  const addVegetable = (event) => {
+    event.preventDefault();
+    axios
+      .post("/api/vegetables", plantToAdd)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+        if (String(error).includes("500")) {
+          setPostError(true);
+          console.log("Post error");
+        }
+      });
 
+    plantToAdd.name = "";
+    plantToAdd.description = "";
+    plantToAdd.seed_spacing_area_sq_in = "";
+    plantToAdd.date_to_plant = "";
+    plantToAdd.days_to_harvest = "";
+    plantToAdd.yield_per_sq_ft = "";
+    plantToAdd.url = "";
+  };
   return (
     <div className="AddVegetableFormWrapper">
       <Heading>Add a vegetable to the cloud...</Heading>
       {/* This Stack gives us some nice spacing between our input fields */}
       <Stack spacing={2}>
         <Input
+          value={plantToAdd.name}
           onChange={(e) => (plantToAdd.name = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Name"
           type="text"
         />
         <Input
+          value={plantToAdd.description}
           onChange={(e) => (plantToAdd.description = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Description"
           type="text"
         />
         <Input
+          value={plantToAdd.seed_spacing_area_sq_in}
           onChange={(e) =>
             (plantToAdd.seed_spacing_area_sq_in = e.target.value)
           }
@@ -118,6 +142,7 @@ const AddVegetableForm = () => {
         <InputGroup>
           <InputLeftAddon>Date to Plant</InputLeftAddon>
           <Input
+            value={plantToAdd.date_to_plant}
             onChange={(e) => (plantToAdd.date_to_plant = e.target.value)}
             focusBorderColor="green.600"
             placeholder="Date to plant"
@@ -125,12 +150,14 @@ const AddVegetableForm = () => {
           />
         </InputGroup>
         <Input
+          value={plantToAdd.days_to_harvest}
           onChange={(e) => (plantToAdd.days_to_harvest = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Days until harvest"
           type="number"
         />
         <Input
+          value={plantToAdd.yield_per_sq_ft}
           onChange={(e) => (plantToAdd.yield_per_sq_ft = e.target.value)}
           focusBorderColor="green.600"
           placeholder="Yield in lbs. per sq. ft."
