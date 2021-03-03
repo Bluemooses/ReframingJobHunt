@@ -7,10 +7,18 @@ const VegetableCard = ({ vegetable }) => {
   const { name } = vegetable;
   const { description } = vegetable;
   return (
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
+    <Box
+      margin="1%"
+      maxW="sm"
+      borderWidth="1px"
+      borderRadius="lg"
+      overflow="hidden"
+    >
       <Image src={url}></Image>
-      <Heading size="sm">{name}</Heading>
-      <Text size="sm">{description}</Text>
+      <Box color="whitesmoke" bg="green.700" p="6">
+        <Box fontWeight="bold">{name}</Box>
+        <Box size="sm">{description}</Box>
+      </Box>
     </Box>
   );
 };
