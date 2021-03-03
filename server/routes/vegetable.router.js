@@ -33,7 +33,6 @@ router.post("/", rejectUnauthenticated, (req, res) => {
   const { days_to_harvest } = req.body;
   const { yield_per_sq_ft } = req.body;
   const { url } = req.body;
-
   vegetableToAddQuery = `INSERT INTO "vegetables" ("name", "description", "seed_spacing_area_sq_in", "date_to_plant", "days_to_harvest", "yield_per_sq_ft", "url") VALUES ($1, $2, $3, $4, $5, $6, $7);`;
 
   pool

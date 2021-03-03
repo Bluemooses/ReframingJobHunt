@@ -25,6 +25,7 @@ const AddVegetableForm = (props) => {
     yield_per_sq_ft: "",
     url: "",
   });
+
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [isPostError, setPostError] = useState(false);
 
@@ -112,14 +113,15 @@ const AddVegetableForm = (props) => {
           console.log("Post error");
         }
       });
+    console.log(plantToAdd);
 
-    plantToAdd.name = "";
-    plantToAdd.description = "";
-    plantToAdd.seed_spacing_area_sq_in = "";
-    plantToAdd.date_to_plant = "";
-    plantToAdd.days_to_harvest = "";
-    plantToAdd.yield_per_sq_ft = "";
-    plantToAdd.url = "";
+    // plantToAdd.name = "";
+    // plantToAdd.description = "";
+    // plantToAdd.seed_spacing_area_sq_in = "";
+    // plantToAdd.date_to_plant = "";
+    // plantToAdd.days_to_harvest = "";
+    // plantToAdd.yield_per_sq_ft = "";
+    // plantToAdd.url = "";
   };
   return (
     <div className="AddVegetableFormWrapper">
