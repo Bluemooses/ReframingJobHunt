@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Box,
-  Image,
   Text,
   Heading,
   Accordion,
@@ -11,6 +10,7 @@ import {
   AccordionPanel,
   AccordionButton,
 } from "@chakra-ui/react";
+import { Card, Image } from "semantic-ui-react";
 
 const VegetableCard = ({ vegetable }) => {
   // Here's what vegetable gives us access to
@@ -18,9 +18,9 @@ const VegetableCard = ({ vegetable }) => {
   const { name } = vegetable;
   const { description } = vegetable;
   return (
-    <GridItem>
-      <Box>
-        <Image objectFit="cover" src={url}></Image>
+    <Card>
+      <Card.Content>
+        <Image src={url} />
         <Accordion allowToggle>
           <AccordionItem>
             <AccordionButton>
@@ -34,8 +34,8 @@ const VegetableCard = ({ vegetable }) => {
         <Box fontWeight="bold">{name}</Box>
         <Box size="sm">{description}</Box>
       </Box> */}
-      </Box>
-    </GridItem>
+      </Card.Content>
+    </Card>
   );
 };
 
