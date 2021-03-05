@@ -37,13 +37,14 @@ const VegetableCard = ({ vegetable }) => {
               <Box flex="1">Vegetable Details</Box>
               <AccordionIcon />
               <AccordionPanel pb="4">
-                Seed Spacing Area: {seed_spacing_area_sq_in} sq. in.
-              </AccordionPanel>
-              <AccordionPanel pb="4">
-                Days to Harvest: {days_to_harvest}
-              </AccordionPanel>
-              <AccordionPanel pb="4">
-                When to Plant: {date_to_display}
+                <List>
+                  <ListItem>
+                    Seed Spacing Area: {seed_spacing_area_sq_in} sq. in.
+                  </ListItem>
+
+                  <ListItem>Days to Harvest: {days_to_harvest}</ListItem>
+                  <ListItem>When to Plant: {date_to_display}</ListItem>
+                </List>
               </AccordionPanel>
             </AccordionButton>
           </AccordionItem>
