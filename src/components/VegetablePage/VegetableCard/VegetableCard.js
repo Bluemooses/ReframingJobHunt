@@ -11,6 +11,7 @@ import {
   AccordionButton,
 } from "@chakra-ui/react";
 import { Card, Image, List, ListItem } from "semantic-ui-react";
+import moment from "moment";
 
 const VegetableCard = ({ vegetable }) => {
   // Here's what vegetable gives us access to
@@ -21,8 +22,10 @@ const VegetableCard = ({ vegetable }) => {
   const { seed_spacing_area_sq_in } = vegetable;
   const { yield_per_sq_ft } = vegetable;
   const { date_to_plant } = vegetable;
-  const date_to_display = new Date(date_to_plant);
+  // This uses moment to give us a nicely formatted Month/Day to plant vegetables
+  const date_to_display = moment(date_to_plant).format("MMMM Do");
 
+  console.log(date_to_display);
   return (
     <Card>
       <Card.Content>
@@ -40,7 +43,7 @@ const VegetableCard = ({ vegetable }) => {
                 Days to Harvest: {days_to_harvest}
               </AccordionPanel>
               <AccordionPanel pb="4">
-                When to Plant: {date_to_plant}
+                When to Plant: {date_to_display}
               </AccordionPanel>
             </AccordionButton>
           </AccordionItem>
