@@ -10,7 +10,7 @@ import {
   AccordionPanel,
   AccordionButton,
 } from "@chakra-ui/react";
-import { Card, Image, List, ListItem } from "semantic-ui-react";
+import { Card, Image, List, ListItem, Label } from "semantic-ui-react";
 import moment from "moment";
 
 const VegetableCard = ({ vegetable }) => {
@@ -34,18 +34,25 @@ const VegetableCard = ({ vegetable }) => {
         <Accordion allowToggle>
           <AccordionItem>
             <AccordionButton>
-              <Box flex="1">Vegetable Details</Box>
               <AccordionIcon />
-              <AccordionPanel pb="4">
-                <List>
-                  <ListItem>
-                    Seed Spacing Area: {seed_spacing_area_sq_in} sq. in.
-                  </ListItem>
-                  <ListItem>Days to Harvest: {days_to_harvest}</ListItem>
-                  <ListItem>When to Plant: {date_to_display}</ListItem>
-                </List>
-              </AccordionPanel>
+              Vegetable Details
             </AccordionButton>
+
+            <AccordionPanel pb="1">
+              <List>
+                <ListItem>
+                  <Label color="black">Seed Spacing Area:</Label>{" "}
+                  {seed_spacing_area_sq_in} sq. in.
+                </ListItem>
+                <ListItem>
+                  <Label color="black">Days to Harvest:</Label>{" "}
+                  {days_to_harvest}
+                </ListItem>
+                <ListItem>
+                  <Label color="black">When to Plant:</Label> {date_to_display}
+                </ListItem>
+              </List>
+            </AccordionPanel>
           </AccordionItem>
         </Accordion>
       </Card.Content>
