@@ -41,7 +41,6 @@ const VegetableCard = ({ vegetable }) => {
                   <ListItem>
                     Seed Spacing Area: {seed_spacing_area_sq_in} sq. in.
                   </ListItem>
-
                   <ListItem>Days to Harvest: {days_to_harvest}</ListItem>
                   <ListItem>When to Plant: {date_to_display}</ListItem>
                 </List>
@@ -49,10 +48,6 @@ const VegetableCard = ({ vegetable }) => {
             </AccordionButton>
           </AccordionItem>
         </Accordion>
-        {/* <Box color="whitesmoke" bg="green.700" p="6">
-        <Box fontWeight="bold">{name}</Box>
-        <Box size="sm">{description}</Box>
-      </Box> */}
       </Card.Content>
     </Card>
   );
