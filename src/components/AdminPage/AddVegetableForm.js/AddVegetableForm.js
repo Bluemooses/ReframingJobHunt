@@ -98,6 +98,7 @@ const AddVegetableForm = (props) => {
     );
   };
 
+  // Let's the uses know their entry was added succesfuly
   const successToast = () => {
     toast({
       title: "Vegetable successfuly submitted",
@@ -108,6 +109,7 @@ const AddVegetableForm = (props) => {
     });
   };
 
+  //There was an error submitting an entry
   const errorToast = () => {
     toast({
       title: "Vegetable was not submitted.",
@@ -132,6 +134,7 @@ const AddVegetableForm = (props) => {
       })
       .catch((error) => {
         if (String(error).includes("500")) {
+          console.log(error);
           setPostError(true);
           errorToast();
           console.log("Post error");
