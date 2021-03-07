@@ -10,11 +10,14 @@ import {
   InputLeftAddon,
   InputGroup,
   Heading,
+  useToast,
+  toast,
 } from "@chakra-ui/react";
 import "./AddVegetableForm.scss";
 
 const AddVegetableForm = (props) => {
   const dispatch = useDispatch();
+  const toast = useToast();
   // This object matches a database entry in the vegetable table [search_count, id, and url] omitted
   const [plantToAdd, setPlantToAdd] = useState({
     name: "",
@@ -95,6 +98,26 @@ const AddVegetableForm = (props) => {
     );
   };
 
+  const successToast = () => {
+    toast({
+      title: "Vegetable successfuly submitted",
+      description: "Your vegetable was added!",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
+  };
+
+  const errorToast = () => {
+    toast({
+      title: "Vegetable was not submitted.",
+      description: "Please make sure all fields are filled.",
+      status: "error",
+      duration: 9000,
+      isClosable: true,
+    });
+  };
+
   //Handles the call to our API to create a new vegetable entry in db
   const addVegetable = (event) => {
     event.preventDefault();
@@ -104,12 +127,13 @@ const AddVegetableForm = (props) => {
         if (String(response).includes("success")) {
           setPostError(false);
           handleReset();
-          console.log("success");
+          successToast();
         }
       })
       .catch((error) => {
         if (String(error).includes("500")) {
           setPostError(true);
+          errorToast();
           console.log("Post error");
         }
       });
