@@ -30,7 +30,6 @@ const AddVegetableForm = (props) => {
   });
 
   const [uploadSuccess, setUploadSuccess] = useState(false);
-  const [isPostError, setPostError] = useState(false);
 
   const generateCloudinarySignature = (callback, params_to_sign) => {
     axios
@@ -126,29 +125,15 @@ const AddVegetableForm = (props) => {
     axios
       .post("/api/vegetables", plantToAdd)
       .then((response) => {
-        if (String(response).includes("success")) {
-          setPostError(false);
-          handleReset();
-          successToast();
-        }
+        handleReset();
+        successToast();
       })
       .catch((error) => {
         if (String(error).includes("500")) {
-          console.log(error);
-          setPostError(true);
+          console.log("ERROR IN POST:", error);
           errorToast();
-          console.log("Post error");
         }
       });
-    console.log(plantToAdd);
-
-    // plantToAdd.name = "";
-    // plantToAdd.description = "";
-    // plantToAdd.seed_spacing_area_sq_in = "";
-    // plantToAdd.date_to_plant = "";
-    // plantToAdd.days_to_harvest = "";
-    // plantToAdd.yield_per_sq_ft = "";
-    // plantToAdd.url = "";
   };
   return (
     <div className="AddVegetableFormWrapper">
