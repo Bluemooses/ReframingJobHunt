@@ -1,4 +1,5 @@
 import React from "react";
+import "./VegetableCard.scss";
 import {
   Box,
   Text,
@@ -10,8 +11,17 @@ import {
   AccordionPanel,
   AccordionButton,
 } from "@chakra-ui/react";
-import { Card, Image, List, ListItem, Label } from "semantic-ui-react";
+import {
+  Card,
+  Image,
+  List,
+  ListItem,
+  Label,
+  CardContent,
+} from "semantic-ui-react";
 import moment from "moment";
+
+//hello
 
 const VegetableCard = ({ vegetable }) => {
   // Here's what vegetable gives us access to
@@ -30,7 +40,12 @@ const VegetableCard = ({ vegetable }) => {
     <Card>
       <Card.Content>
         <Heading>{name}</Heading>
-        <Image src={url} size="large" rounded fluid wrapped />
+        <Image
+          className="VegetableCardImage"
+          src={url}
+          size="massive"
+          rounded
+        />
         <Accordion allowToggle>
           <AccordionItem>
             <AccordionButton>
