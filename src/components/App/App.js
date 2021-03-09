@@ -12,10 +12,9 @@ import "./App.scss";
 // Components
 import Nav from "../Nav/Nav";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import AboutPage from "../AboutPage/AboutPage";
+import WhyPage from "../WhyPage/WhyPage";
 import UserPage from "../UserPage/UserPage";
 import InfoPage from "../InfoPage/InfoPage";
-import PlantPage from "../PlantPage/PlantPage";
 import AdminPage from "../AdminPage/AdminPage";
 import axios from "axios";
 import VegetablePage from "../VegetablePage/VegetablePage";
@@ -43,7 +42,7 @@ const App = () => {
           <Redirect exact from="/" to="/home" />
           {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
-          <Route exact path="/about" component={AboutPage} />
+          <Route exact path="/about" component={WhyPage} />
           <Route exact path="/vegetables" component={VegetablePage} />
           {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/home will show the UserPage if the user is logged in.

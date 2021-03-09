@@ -30,7 +30,7 @@ const VegetableCard = ({ vegetable }) => {
     <Card>
       <Card.Content>
         <Heading>{name}</Heading>
-        <Image src={url} />
+        <Image src={url} size="large" rounded fluid wrapped />
         <Accordion allowToggle>
           <AccordionItem>
             <AccordionButton>
