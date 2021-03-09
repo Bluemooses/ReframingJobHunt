@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAClB,OAAO,EAAE,MAAM;EACf,WAAW,EAAE,EAAE;CAChB",
+    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAClB,OAAO,EAAE,IAAI;EACb,OAAO,EAAE,MAAM;EACf,WAAW,EAAE,EAAE;EACf,WAAW,EAAE,EAAE;CAChB",
     "sources": [
         "../../../src/components/VegetablePage/VegetablePage.scss"
     ],
