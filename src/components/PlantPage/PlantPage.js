@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import PlantCard from "./PlantCard/PlantCard";
 import PlantSearch from "./PlantSearch/PlantSearch";
-const PlantPage = () => {
+function PlantPage() {
   const [plantData, setPlantData] = useState();
 
   useEffect(() => {
@@ -29,6 +29,6 @@ const PlantPage = () => {
         })}
     </div>
   );
-};
+}
 
 export default PlantPage;

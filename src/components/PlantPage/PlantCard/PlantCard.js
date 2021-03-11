@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Image } from "@chakra-ui/react";
 
-const PlantCard = ({ plant }) => {
+function PlantCard({ plant }) {
   console.log(plant);
 
   return (
@@ -12,6 +12,6 @@ const PlantCard = ({ plant }) => {
       <p>Genus: {plant.genus}</p>
     </div>
   );
-};
+}
 
 export default PlantCard;

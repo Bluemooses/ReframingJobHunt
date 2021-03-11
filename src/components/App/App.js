@@ -19,7 +19,7 @@ import AdminPage from "../AdminPage/AdminPage";
 import axios from "axios";
 import VegetablePage from "../VegetablePage/VegetablePage";
 
-const App = () => {
+function App() {
   // Dispatch hook
   const dispatch = useDispatch();
 
@@ -59,6 +59,6 @@ const App = () => {
       </div>
     </Router>
   );
-};
+}
 
 export default connect()(App);
