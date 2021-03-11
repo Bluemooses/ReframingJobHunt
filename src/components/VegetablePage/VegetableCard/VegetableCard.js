@@ -1,13 +1,10 @@
 import React from "react";
 import "./VegetableCard.scss";
 import {
-  Box,
-  Text,
   Heading,
   Accordion,
   AccordionItem,
   AccordionIcon,
-  GridItem,
   AccordionPanel,
   AccordionButton,
 } from "@chakra-ui/react";

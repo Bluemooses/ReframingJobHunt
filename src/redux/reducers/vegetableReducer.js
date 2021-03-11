@@ -3,7 +3,7 @@ const vegetableReducer = (state = [], action) => {
     case "SET_VEGETABLES":
       return action.payload;
     case "UNSET_VEGETABLES":
-      return {};
+      return [];
     default:
       return state;
   }
