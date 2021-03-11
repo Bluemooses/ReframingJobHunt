@@ -5,13 +5,12 @@ import { Container, Divider, List, ListItem } from "semantic-ui-react";
 const WhyPage = () => (
   <Container textAlign="center">
     <Heading>Plant Minnesota</Heading>
-    <Text fontFamily="Bookman">
+    <Text fontWeight="thin" fontFamily="Bookman">
       Plant Minnesota was created to bring awareness to the untapped resources
       of urban/suburban land which can be utilized to promote self reliance.
-    </Text>
-    <Divider />
-    <Heading>What We Do</Heading>
-    <Text fontFamily="Bookman">
+      <Divider />
+      <Divider />
+      <Heading>What We Do</Heading>
       <List>
         <ListItem>
           Compile data on ideal planting times, theoretical yields of planted
