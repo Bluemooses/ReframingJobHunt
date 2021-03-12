@@ -20,7 +20,7 @@ import moment from "moment";
 
 //hello
 
-const VegetableCard = ({ vegetable }) => {
+function VegetableCard({ vegetable }) {
   // Here's what vegetable gives us access to
   const { url } = vegetable;
   const { name } = vegetable;
@@ -63,6 +63,10 @@ const VegetableCard = ({ vegetable }) => {
                 <ListItem>
                   <Label color="black">When to Plant:</Label> {date_to_display}
                 </ListItem>
+                <ListItem>
+                  <Label color="black">Theoretical Yield:</Label>{" "}
+                  {yield_per_sq_ft} lbs/sq ft.
+                </ListItem>
               </List>
             </AccordionPanel>
           </AccordionItem>
@@ -70,6 +74,6 @@ const VegetableCard = ({ vegetable }) => {
       </Card.Content>
     </Card>
   );
-};
+}
 
 export default VegetableCard;

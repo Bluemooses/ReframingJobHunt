@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Card } from "semantic-ui-react";
 import VegetableCard from "./VegetableCard/VegetableCard";
 
-const VegetablePage = () => {
+function VegetablePage() {
   // We can just use the useSelector hook to select only vegetables from our redux store.
   const vegetables = useSelector((state) => state.vegetables);
   return (
@@ -15,6 +15,6 @@ const VegetablePage = () => {
       })}
     </Card.Group>
   );
-};
+}
 
 export default VegetablePage;
