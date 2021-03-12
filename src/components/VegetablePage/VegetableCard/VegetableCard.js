@@ -37,12 +37,7 @@ function VegetableCard({ vegetable }) {
     <Card>
       <Card.Content>
         <Heading>{name}</Heading>
-        <Image
-          className="VegetableCardImage"
-          src={url}
-          size="massive"
-          rounded
-        />
+        <Image className="VegetableCardImage" src={url} size="huge" rounded />
         <Accordion allowToggle>
           <AccordionItem>
             <AccordionButton>
