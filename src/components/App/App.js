@@ -25,13 +25,12 @@ function App() {
 
   useEffect(() => {
     dispatch({ type: "FETCH_USER" });
+    const fetchVegetables = async () => {
+      const response = await axios.get("/api/vegetables");
+      dispatch({ type: "SET_VEGETABLES", payload: response.data });
+    };
     fetchVegetables();
-  }, [dispatch]);
-
-  const fetchVegetables = async () => {
-    const response = await axios.get("/api/vegetables");
-    dispatch({ type: "SET_VEGETABLES", payload: response.data });
-  };
+  }, []);
 
   return (
     <Router>
