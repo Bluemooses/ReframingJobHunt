@@ -32,7 +32,6 @@ function VegetableCard({ vegetable }) {
   // This uses moment to give us a nicely formatted Month/Day to plant vegetables
   const date_to_display = moment(date_to_plant).format("MMMM Do");
 
-  console.log(date_to_display);
   return (
     <Card>
       <Card.Content>
