@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga";
 import logger from "redux-logger";
+import "./index.scss";
 import "semantic-ui-css/semantic.min.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
