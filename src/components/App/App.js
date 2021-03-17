@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../index.scss";
 
 import { useDispatch } from "react-redux";
 import axios from "axios";
