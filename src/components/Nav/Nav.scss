@@ -1,13 +1,7 @@
-.nav-title {
-  font-size: 24px;
-  font-weight: 700;
-  display: inline-block;
-  color: #f2f2f2;
-  padding-left: 10px;
-}
-
 nav {
   background-color: #c4ebc4;
+  text-align: center;
+  margin-bottom: 2vh;
 }
 nav ul {
   margin: 0;
@@ -17,10 +11,16 @@ nav ul {
 
 nav a {
   text-transform: uppercase;
+  font-size: medium;
   color: #333;
+  font-family: "Chango";
+  margin: auto;
 }
 
 nav li {
   display: inline-block;
-  margin-left: 70px;
+  margin-right: 2em;
+  margin-left: 2em;
+  margin-bottom: 0.22em;
+  margin-top: 0.22em;
 }

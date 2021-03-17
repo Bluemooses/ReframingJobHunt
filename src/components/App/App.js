@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import axios from "axios";
+
 import {
   HashRouter as Router,
   Route,
@@ -17,7 +19,6 @@ import UserPage from "../UserPage/UserPage";
 import InfoPage from "../InfoPage/InfoPage";
 import AdminPage from "../AdminPage/AdminPage";
 import AdminRoute from "../AdminRoute/AdminRoute";
-import axios from "axios";
 import VegetablePage from "../VegetablePage/VegetablePage";
 
 function App() {
@@ -34,8 +35,8 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <div>
+    <div className="App">
+      <Router>
         <Nav />
         <Switch>
           {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
@@ -56,8 +57,8 @@ function App() {
           {/* If none of the other routes matched, we will show a 404. */}
           <Route render={() => <h1>404</h1>} />
         </Switch>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 
